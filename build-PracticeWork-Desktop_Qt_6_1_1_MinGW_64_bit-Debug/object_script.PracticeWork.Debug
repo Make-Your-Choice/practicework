@@ -1,0 +1,13 @@
+debug/buffalo.o
+debug/grass.o
+debug/main.o
+debug/mainwindow.o
+debug/predator.o
+debug/prey.o
+debug/zebra.o
+debug/moc_buffalo.o
+debug/moc_grass.o
+debug/moc_mainwindow.o
+debug/moc_predator.o
+debug/moc_prey.o
+debug/moc_zebra.o

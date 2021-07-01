@@ -1,0 +1,13 @@
+release/buffalo.o
+release/grass.o
+release/main.o
+release/mainwindow.o
+release/predator.o
+release/prey.o
+release/zebra.o
+release/moc_buffalo.o
+release/moc_grass.o
+release/moc_mainwindow.o
+release/moc_predator.o
+release/moc_prey.o
+release/moc_zebra.o

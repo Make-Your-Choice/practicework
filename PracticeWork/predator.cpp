@@ -10,12 +10,11 @@
 #include <QGraphicsItemAnimation>
 #include <QTimeLine>
 
-predator::predator(QObject *parent) : QObject(parent)
+predator::predator(QObject *parent) : QObject(parent) //конструктор
 {
     QRandomGenerator *gen = QRandomGenerator::global();
     QGraphicsEllipseItem *circle = new QGraphicsEllipseItem();
-    circle->setRect(20.0, 20.0, 20.0, 20.0);
-    //circle->setBrush(Qt::black);
+    circle->setRect(20.0, 20.0, 20.0, 20.0);;
     circle->setBrush(Qt::yellow);
     circle->setPos(gen->bounded(-15, 715), gen->bounded(-15, 365));
     this->hunger = gen->bounded(90, 100);
@@ -23,32 +22,32 @@ predator::predator(QObject *parent) : QObject(parent)
     this->animal = circle;
 }
 
-QGraphicsEllipseItem* predator::get_animal()
+QGraphicsEllipseItem* predator::get_animal() //геттер для графического элемента
 {
     return animal;
 }
 
-double predator::get_x()
+double predator::get_x() //геттер для координаты x
 {
     return animal->pos().x();
 }
 
-double predator::get_y()
+double predator::get_y() //геттер для координаты y
 {
     return animal->pos().y();
 }
 
-int predator::get_hunger()
+int predator::get_hunger() //геттер для голода
 {
     return hunger;
 }
 
-int predator::get_stamina()
+int predator::get_stamina() //геттер для выносливости
 {
     return stamina;
 }
 
-double predator::check_distance(class prey *animal_single)
+double predator::check_distance(class prey *animal_single) //рассчет расстояния до жертвы
 {
     double x_dist = 0;
     double y_dist = 0;
@@ -57,7 +56,7 @@ double predator::check_distance(class prey *animal_single)
     return qSqrt(x_dist * x_dist + y_dist * y_dist);
 }
 
-void predator::hunt()
+void predator::hunt() //охота
 {
     if(hunger<100)
         hunger+=5;
@@ -69,7 +68,7 @@ void predator::hunt()
         stamina=0;;
 }
 
-void predator::eat(class zebra *animal)
+void predator::eat(class zebra *animal) //поедание зебры
 {
     if(hunger>0)
         hunger-=10;
@@ -82,7 +81,7 @@ void predator::eat(class zebra *animal)
     animal->set_status(0);
 }
 
-void predator::eat(class buffalo *animal)
+void predator::eat(class buffalo *animal) //поедание буйвола
 {
     if(hunger>0)
         hunger-=15;
@@ -95,7 +94,7 @@ void predator::eat(class buffalo *animal)
     animal->set_status(0);
 }
 
-void predator::rest()
+void predator::rest() //отдых
 {
     if(hunger<100)
         hunger+=5;
@@ -107,7 +106,7 @@ void predator::rest()
         stamina=100;
 }
 
-void predator::damage()
+void predator::damage() //получение урона
 {
     if(hunger<100)
         hunger+=5;
@@ -119,7 +118,7 @@ void predator::damage()
         stamina=0;
 }
 
-void predator::damage(int horns)
+void predator::damage(int horns) //получение урона от рогов
 {
     if(horns >= 75)
     {
@@ -167,7 +166,7 @@ void predator::damage(int horns)
     }
 }
 
-predator::~predator()
+predator::~predator() //деструктор
 {
-    //delete this;
+
 }

@@ -21,12 +21,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    MainWindow w(lions_max, zebras_max, buffalos_max, grass_max);
-
-    //QTimer *timer_main = new QTimer();
-    //QObject::connect(timer_main, &QTimer::timeout, &w, QOverload<>::of(&MainWindow::move));
-    //timer_main->start(500);
-
-    w.show();
+    MainWindow w(lions_max, zebras_max, buffalos_max, grass_max); //создание главной формы
+    w.show(); //вывод ее на экран
     return a.exec();
 }

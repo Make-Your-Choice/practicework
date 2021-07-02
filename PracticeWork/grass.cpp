@@ -4,7 +4,7 @@
 #include <QPainter>
 
 
-grass::grass(QObject *parent) : QObject(parent)
+grass::grass(QObject *parent) : QObject(parent) //конструктор
 {
     QRandomGenerator *gen = QRandomGenerator::global();
     QGraphicsEllipseItem *circle = new QGraphicsEllipseItem();
@@ -18,39 +18,39 @@ grass::grass(QObject *parent) : QObject(parent)
     this->area = circle;
 }
 
-double grass::get_x()
+double grass::get_x() //геттер для координаты x
 {
     return area->pos().x();
 }
 
-double grass::get_y()
+double grass::get_y() //геттер для координаты y
 {
     return area->pos().y();
 }
 
-void grass::vanish()
+void grass::vanish() //уменьшение количества
 {
     amount-=10;
     if(amount < 0)
         amount = 0;
 }
 
-void grass::set_area(QGraphicsEllipseItem *area)
+void grass::set_area(QGraphicsEllipseItem *area) //сеттер для графического элемента
 {
     this->area=area;
 }
 
-int grass::get_amount()
+int grass::get_amount() //геттер для количества
 {
     return amount;
 }
 
-QGraphicsEllipseItem* grass::get_area()
+QGraphicsEllipseItem* grass::get_area() //геттер для графического элемента
 {
     return area;
 }
 
-grass::~grass()
+grass::~grass() //деструктор
 {
 
 }

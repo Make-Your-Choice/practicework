@@ -3,7 +3,7 @@
 
 #include <QRandomGenerator>
 
-zebra::zebra(QObject *parent) : prey(parent)
+zebra::zebra(QObject *parent) : prey(parent) //конструктор
 {
     QRandomGenerator *gen = QRandomGenerator::global();
     QGraphicsEllipseItem *circle = new QGraphicsEllipseItem();
@@ -16,12 +16,12 @@ zebra::zebra(QObject *parent) : prey(parent)
     this->animal = circle;
 }
 
-void zebra::fight()
+void zebra::fight() //сражение
 {
     stamina-=15;
 }
 
-zebra::~zebra()
+zebra::~zebra() //деструктор
 {
 
 }

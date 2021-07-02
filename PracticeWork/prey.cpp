@@ -10,12 +10,12 @@ prey::prey(QObject *parent) : QObject(parent)
 
 }
 
-QGraphicsEllipseItem* prey::get_animal()
+QGraphicsEllipseItem* prey::get_animal() //геттер для графического элемента
 {
     return animal;
 }
 
-double prey::check_distance(class grass *area_piece)
+double prey::check_distance(class grass *area_piece) //рассчет расстояния до травы
 {
     double x_dist = 0;
     double y_dist = 0;
@@ -24,42 +24,42 @@ double prey::check_distance(class grass *area_piece)
     return qSqrt(x_dist * x_dist + y_dist * y_dist);
 }
 
-double prey::get_x()
+double prey::get_x() //геттер для координаты x
 {
     return animal->pos().x();
 }
 
-double prey::get_y()
+double prey::get_y() //геттер для координаты y
 {
     return animal->pos().y();
 }
 
-int prey::get_courage()
+int prey::get_courage() //геттер для смелости
 {
     return courage;
 }
 
-int prey::get_stamina()
+int prey::get_stamina() //геттер для выносливости
 {
     return stamina;
 }
 
-int prey::get_status()
+int prey::get_status() //геттер для статуса
 {
     return status;
 }
 
-void prey::set_status(int status)
+void prey::set_status(int status) //сеттер для статуса
 {
     this->status = status;
 }
 
-void prey::set_animal(QGraphicsEllipseItem * animal)
+void prey::set_animal(QGraphicsEllipseItem * animal) //сеттер для графического элемета
 {
     this->animal = animal;
 }
 
-void prey::eat(class grass *field)
+void prey::eat(class grass *field) //поедание травы
 {
     if(stamina<100)
         stamina+=10;
@@ -68,7 +68,7 @@ void prey::eat(class grass *field)
     field->vanish();
 }
 
-prey::~prey()
+prey::~prey() //деструктор
 {
 
 }

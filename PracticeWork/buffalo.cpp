@@ -3,12 +3,11 @@
 
 #include <QRandomGenerator>
 
-buffalo::buffalo(QObject *parent) : prey(parent)
+buffalo::buffalo(QObject *parent) : prey(parent) //конструктор
 {
     QRandomGenerator *gen = QRandomGenerator::global();
     QGraphicsEllipseItem *circle = new QGraphicsEllipseItem();
     circle->setRect(20.0, 20.0, 20.0, 20.0);
-    //circle->setBrush(Qt::red);
     circle->setBrush(Qt::black);
     circle->setPos(gen->bounded(-15, 715), gen->bounded(-15, 365));
     this->courage = gen->bounded(51, 100);
@@ -18,18 +17,18 @@ buffalo::buffalo(QObject *parent) : prey(parent)
     this->animal = circle;
 }
 
-int buffalo::get_horns_durability()
+int buffalo::get_horns_durability() //геттер для прочности рогов
 {
     return horns_durability;
 }
 
-void buffalo::fight()
+void buffalo::fight() //сражение
 {
     stamina-=10;
     horns_durability-=15;
 }
 
-buffalo::~buffalo()
+buffalo::~buffalo() //деструктор
 {
 
 }

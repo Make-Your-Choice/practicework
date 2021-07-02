@@ -24,10 +24,7 @@ public:
     MainWindow(int lions_num, int zebras_num, int buffalos_num, int grass_num, QWidget *parent = nullptr);
     ~MainWindow();
 public slots:
-    void update_labels();
     void move();
-//protected slots:
-    //void keyPressEvent(QKeyEvent *event);
 
 private:
     Ui::MainWindow *ui;
@@ -47,11 +44,6 @@ private:
     grass *field[nmax];
     int grass_num;
     int field_count;
-//signals:
-    //void valueChanged();
-//public slots:
-    //void set_new_value_zebras();
-
 };
 #endif // MAINWINDOW_H
 
